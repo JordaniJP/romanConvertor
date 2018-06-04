@@ -13,19 +13,19 @@ values = (('M',  1000),
          ('I',  1))
 
 def toArabic(int):
-    result = 0
-    boom = []
+    arabic = 0
+    carry = []
     for i in range(len(int)):
         for letter, value in values:
             if int[i] == letter:
-                boom.append(value)
-    boom.append(0)
+                carry.append(value)
+    carry.append(0)
     for i in range(len(int)):
-        if boom[i] >= boom[i+1]:
-            result = result + boom[i]
+        if carry[i] >= carry[i+1]:
+            arabic = arabic + carry[i]
         else:
-            result = result - boom[i]
-    return result
+            arabic = arabic - carry[i]
+    return arabic
     
 def toRoman(num):
 
